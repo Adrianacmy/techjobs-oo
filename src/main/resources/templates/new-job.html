@@ -13,7 +13,7 @@
         <div class="form-group">
             <label th:for="name">Name</label>
             <input th:field="*{name}" />
-            <div th:errors="*{name}"></div>
+            <span th:errors="*{name}" ></span>
         </div>
 
         <div class="form-group">
@@ -23,6 +23,7 @@
                         th:value="${employer.value}"
                         th:text="${employer.value}"></option>
             </select>
+            <div th:errors="*{employer}"></div>
         </div>
 
         <div class="form-group">
@@ -32,6 +33,7 @@
                         th:value="${location.value}"
                         th:text="${location.value}"></option>
             </select>
+            <div th:errors="*{location}"></div>
         </div>
 
 
@@ -43,6 +45,7 @@
                         th:value="${positionType.value}"
                         th:text="${positionType.value}"></option>
             </select>
+            <div th:errors="*{positionType}"></div>
         </div>
 
         <div class="form-group">
@@ -52,6 +55,7 @@
                         th:value="${coreCompetency.value}"
                         th:text="${coreCompetency.value}"></option>
             </select>
+            <div th:errors="*{coreCompetency}"></div>
         </div>
 
         <!-- TODO #5 - Create <select> dropdowns for other job fields -->

@@ -16,6 +16,7 @@ import java.util.ArrayList;
 public class JobForm {
 
     @NotNull
+    @Size(min=1, max=12)
     private String name;
 
     @NotNull

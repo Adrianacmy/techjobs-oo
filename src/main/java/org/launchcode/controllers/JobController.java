@@ -45,23 +45,24 @@ public class JobController {
         // TODO #6 - Validate the JobForm model, and if valid, create a
         // new Job and add it to the jobData data store. Then
         // redirect to the job detail view for the new Job.
-        if (errors.hasErrors()) {
-            model.addAttribute(new JobForm());
+
+        if (errors.hasErrors()){
+//            model.addAttribute(new JobForm());
             return "new-job";
         }
-            String theName = jobForm.getName();
-            Employer theEmployer = jobForm.getEmployer();
-            Location theLocation = jobForm.getLocation();
-            CoreCompetency theCoreCompetency = jobForm.getCoreCompetency();
-            PositionType thePositionType = jobForm.getPositionType();
+        String theName = jobForm.getName();
+        Employer theEmployer = jobForm.getEmployer();
+        Location theLocation = jobForm.getLocation();
+        CoreCompetency theCoreCompetency = jobForm.getCoreCompetency();
+        PositionType thePositionType = jobForm.getPositionType();
 
-            Job newJob = new Job(theName, theEmployer, theLocation,
-                    thePositionType, theCoreCompetency);
+        Job newJob = new Job(theName, theEmployer, theLocation,
+                thePositionType, theCoreCompetency);
 
-            JobData jd = JobData.getInstance();
-            jd.add(newJob);
+        JobData jd = JobData.getInstance();
+        jd.add(newJob);
 
-            return "redirect:/job/" + newJob.getId();
+        return "redirect:/job/" + newJob.getId();
 
 
 
