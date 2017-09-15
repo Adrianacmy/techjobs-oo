@@ -1,6 +1,5 @@
 package org.launchcode.models.data;
 
-import javafx.geometry.Pos;
 import org.launchcode.models.*;
 
 import java.util.ArrayList;
@@ -71,6 +70,7 @@ public class JobData {
             }
 
             for (JobFieldType column : JobFieldType.values()) {
+
                 if (column != JobFieldType.ALL && getFieldByType(job, column).contains(value)) {
                     matchingJobs.add(job);
                     break;
